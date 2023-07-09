@@ -1,0 +1,186 @@
+@import url("https://fonts.googleapis.com/css?family=Lexend+Deca|Dosis&display=swap");
+
+body {
+    margin: 0;
+    padding: 16px;
+    flex: 1;
+    background: #2f94d8;
+    justify-content: center;
+    align-items: center;
+    font-family: "Lexend Deca", sans-serif;
+    overflow-y: none !important;
+}
+
+button {
+    & img {
+        transition: transform 0.25s;
+    }
+    &:hover {
+        & > img {
+            transform: scale(1.2);
+        }
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+input {
+    font-family: "Lexend Deca", sans-serif;
+    &::placeholder {
+        font-family: "Lexend Deca", sans-serif;
+    }
+    &:focus {
+        outline: none;
+    }
+}
+
+.searchbox {
+    height: 60px;
+    width: 450px;
+    max-width: 100%;
+    background: white;
+    border-radius: 10px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 50px;
+    display: flex;
+
+    & > .btn-menu {
+        padding: 16px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+
+    & > .search {
+        border: none;
+        width: 100%;
+    }
+
+    & > .btn-search {
+        padding: 16px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+// Modal Css Starts Here
+
+.search-modal {
+    height: 400px;
+    width: 450px;
+    max-width: 100%;
+    background: white;
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 160px;
+    animation: slideInUp 0.5s;
+    display: none;
+    &-header {
+        display: flex;
+        padding: 10px;
+        border-bottom: 1px solid #00000017;
+        & h3 {
+            font-size: 16px;
+            text-transform: uppercase;
+            font-weight: 500;
+            float: left;
+        }
+
+        & span {
+            & img {
+                float: right;
+                position: absolute;
+                right: 16px;
+                top: 25px;
+                margin: 0 auto;
+                cursor: pointer;
+                transition: 0.5s all;
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+        }
+    }
+    &-body {
+        padding: 20px;
+        height: 285px;
+        overflow-y: scroll;
+
+        & .message {
+            display: flex;
+            cursor: pointer;
+            padding: 10px 15px;
+            border-radius: 10px;
+            &-avatar {
+                margin-right: 16px;
+                margin-top: 10px;
+                & img {
+                    height: 60px;
+                    width: 60px;
+                    border-radius: 30px;
+                    object-fit: cover;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.45);
+                }
+            }
+            &-body {
+                margin-left: 0;
+                margin-top: 8px;
+                & p {
+                    margin-bottom: 0;
+                    font-size: 14px;
+                    font-weight: 500;
+                    color: #444;
+                }
+                & small {
+                    font-weight: 400;
+                    font-family: Dosis;
+                    color: #777;
+                }
+            }
+
+            &:hover {
+                background-color: #2f94d817;
+            }
+        }
+
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #2f94d8;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            box-shadow: -1px 0 5px rgba(0, 0, 0, 0.15);
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        -webkit-transform: translate3d(0, 15%, 0);
+        transform: translate3d(0, 15%, 0);
+        visibility: visible;
+    }
+
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
